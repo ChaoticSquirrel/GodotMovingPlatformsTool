@@ -1,0 +1,245 @@
+[gd_scene load_steps=21 format=3 uid="uid://dag35ji6n3m42"]
+
+[ext_resource type="Script" uid="uid://cure850b10y3k" path="res://Levels/PlatformPresets/MovingWall/moving_wall.gd" id="1_1yggm"]
+[ext_resource type="Texture2D" uid="uid://ccmp61ut5jyub" path="res://Levels/PlatformPresets/MovingWall/Graphics/12HighWall.png" id="2_1yggm"]
+[ext_resource type="Texture2D" uid="uid://hdrqhkxpttjd" path="res://Levels/PlatformPresets/MovingWall/Graphics/12HighDeathWall.png" id="2_o6fgi"]
+[ext_resource type="Texture2D" uid="uid://cxc7a1kaem4s6" path="res://Levels/PlatformPresets/MovingWall/Graphics/16HighWall.png" id="3_hmbh0"]
+[ext_resource type="Texture2D" uid="uid://35ytuoke062g" path="res://Levels/PlatformPresets/MovingWall/Graphics/16HighDeathWall.png" id="4_81dlv"]
+[ext_resource type="Texture2D" uid="uid://bnse6g8t5e5gu" path="res://Levels/PlatformPresets/MovingWall/Graphics/20HighWall.png" id="4_nxu74"]
+[ext_resource type="Texture2D" uid="uid://cyocna3klfopv" path="res://Levels/PlatformPresets/MovingWall/Graphics/4HighWall.png" id="5_1yggm"]
+[ext_resource type="Texture2D" uid="uid://ml4jcb6av4uq" path="res://Levels/PlatformPresets/MovingWall/Graphics/8HighWall.png" id="6_1yggm"]
+[ext_resource type="Texture2D" uid="uid://dt3stogcebthh" path="res://Levels/PlatformPresets/MovingWall/Graphics/20HighDeathWall.png" id="6_ptolm"]
+[ext_resource type="Texture2D" uid="uid://wk5mx0koo2tu" path="res://Levels/PlatformPresets/MovingWall/Graphics/4HighDeathWall.png" id="8_ohkj4"]
+[ext_resource type="Texture2D" uid="uid://wey0vlokp7ec" path="res://Levels/PlatformPresets/MovingWall/Graphics/8HighDeathWall.png" id="10_8bblr"]
+
+[sub_resource type="Animation" id="Animation_4bbnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Detector/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_o6fgi"]
+resource_name = "Move"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Detector/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6fgi"]
+resource_local_to_scene = true
+_data = {
+&"Move": SubResource("Animation_o6fgi"),
+&"RESET": SubResource("Animation_4bbnk")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sg28"]
+atlas = ExtResource("2_1yggm")
+region = Rect2(0, 0, 8, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k6oi"]
+atlas = ExtResource("3_hmbh0")
+region = Rect2(0, 0, 8, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xguik"]
+atlas = ExtResource("4_nxu74")
+region = Rect2(0, 0, 8, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmbh0"]
+atlas = ExtResource("5_1yggm")
+region = Rect2(0, 0, 8, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxu74"]
+atlas = ExtResource("6_1yggm")
+region = Rect2(0, 0, 8, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7ogm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o6fgi")
+}],
+"loop": true,
+"name": &"12HighDeathWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sg28")
+}],
+"loop": true,
+"name": &"12HighWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_81dlv")
+}],
+"loop": true,
+"name": &"16HighDeathWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k6oi")
+}],
+"loop": true,
+"name": &"16HighWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ptolm")
+}],
+"loop": true,
+"name": &"20HighDeathWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xguik")
+}],
+"loop": true,
+"name": &"20HighWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ohkj4")
+}],
+"loop": true,
+"name": &"4HighDeathWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmbh0")
+}],
+"loop": true,
+"name": &"4HighWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8bblr")
+}],
+"loop": true,
+"name": &"8HighDeathWall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxu74")
+}],
+"loop": true,
+"name": &"8HighWall",
+"speed": 5.0
+}]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" groups=["Wall"]]
+script = ExtResource("1_1yggm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o6fgi")
+}
+autoplay = "Move"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.0517578e-05, 0)
+sprite_frames = SubResource("SpriteFrames_q7ogm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]

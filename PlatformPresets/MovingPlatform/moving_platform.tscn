@@ -1,0 +1,200 @@
+[gd_scene load_steps=22 format=3 uid="uid://14du1a2d5225"]
+
+[ext_resource type="Script" uid="uid://bnnapofpgqaun" path="res://Levels/PlatformPresets/MovingPlatform/moving_platform.gd" id="1_0fxp8"]
+[ext_resource type="Texture2D" uid="uid://df44koklfuxit" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/4LongPlatform.png" id="2_682m7"]
+[ext_resource type="Animation" uid="uid://cnax6ypbmqlgr" path="res://Levels/PlatformPresets/MovingPlatform/Move.res" id="2_gmx6n"]
+[ext_resource type="Texture2D" uid="uid://b61beh86t0ja7" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/12LongPlatform.png" id="2_ikr05"]
+[ext_resource type="Texture2D" uid="uid://yhw7okwa5yoa" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/16LongPlatform.png" id="3_0ldhd"]
+[ext_resource type="Texture2D" uid="uid://cbucx2gkbv6nb" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/12LongDeathPlatform.png" id="3_r7sj1"]
+[ext_resource type="Texture2D" uid="uid://dt68lpjqta7q0" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/20LongPlatform.png" id="4_x4jch"]
+[ext_resource type="Texture2D" uid="uid://dsx2rx5i7a1vj" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/16LongDeathPlatform.png" id="5_q2cqc"]
+[ext_resource type="Texture2D" uid="uid://yl1obrfdotf4" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/8LongPlatform.png" id="6_7oq5c"]
+[ext_resource type="Texture2D" uid="uid://r2kiqrtkfk6f" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/4LongDeathPlatform.png" id="7_4pf0w"]
+[ext_resource type="Texture2D" uid="uid://c4xhkj3u4ju1t" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/20LongDeathPlatform.png" id="7_bw33s"]
+[ext_resource type="Texture2D" uid="uid://bdcxfmjpe3u16" path="res://Levels/PlatformPresets/MovingPlatform/Graphics/8LongDeathPlatform.png" id="9_ur1vp"]
+
+[sub_resource type="Animation" id="Animation_4bbnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Detector/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmx6n"]
+resource_local_to_scene = true
+_data = {
+&"Move": ExtResource("2_gmx6n"),
+&"RESET": SubResource("Animation_4bbnk")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pf0w"]
+atlas = ExtResource("3_r7sj1")
+region = Rect2(0, 0, 96, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x0lc"]
+atlas = ExtResource("2_ikr05")
+region = Rect2(0, 0, 96, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp1qb"]
+atlas = ExtResource("3_0ldhd")
+region = Rect2(0, 0, 128, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7fof"]
+atlas = ExtResource("4_x4jch")
+region = Rect2(0, 0, 160, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur1vp"]
+atlas = ExtResource("7_4pf0w")
+region = Rect2(0, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i472p"]
+atlas = ExtResource("2_682m7")
+region = Rect2(0, 0, 32, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fxp8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pf0w")
+}],
+"loop": true,
+"name": &"12LongDeathPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x0lc")
+}],
+"loop": true,
+"name": &"12LongPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_q2cqc")
+}],
+"loop": true,
+"name": &"16LongDeathPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp1qb")
+}],
+"loop": true,
+"name": &"16LongPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bw33s")
+}],
+"loop": true,
+"name": &"20LongDeathPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7fof")
+}],
+"loop": true,
+"name": &"20LongPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur1vp")
+}],
+"loop": true,
+"name": &"4LongDeathPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i472p")
+}],
+"loop": true,
+"name": &"4LongPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ur1vp")
+}],
+"loop": true,
+"name": &"8LongDeathPlatform",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7oq5c")
+}],
+"loop": true,
+"name": &"8LongPlatform",
+"speed": 5.0
+}]
+
+[node name="moving_platform" type="AnimatableBody2D"]
+script = ExtResource("1_0fxp8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Floor"]]
+libraries = {
+&"": SubResource("AnimationLibrary_gmx6n")
+}
+autoplay = "Move"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.0517578e-05, 0)
+sprite_frames = SubResource("SpriteFrames_0fxp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8146973e-06, 0)
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]

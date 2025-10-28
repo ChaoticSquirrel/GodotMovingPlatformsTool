@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dam8gqgrtmdw5"]
+
+[ext_resource type="Script" uid="uid://cp1pmigtxl7ql" path="res://GameObjects/Button/button_body.gd" id="1_5ayx8"]
+[ext_resource type="Texture2D" uid="uid://4s2qwhbsjr81" path="res://GameObjects/Button.png" id="2_da26a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oonvh"]
+atlas = ExtResource("2_da26a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yup7k"]
+atlas = ExtResource("2_da26a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_263po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oonvh")
+}],
+"loop": true,
+"name": &"Pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yup7k")
+}],
+"loop": true,
+"name": &"Unpressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yup7k"]
+size = Vector2(16, 6)
+
+[node name="ButtonBody" type="StaticBody2D"]
+script = ExtResource("1_5ayx8")
+
+[node name="Button" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_263po")
+animation = &"Unpressed"
+
+[node name="DetectCrate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectCrate"]
+shape = SubResource("RectangleShape2D_yup7k")
+
+[connection signal="body_entered" from="DetectCrate" to="." method="_on_detect_crate_body_entered"]
+[connection signal="body_exited" from="DetectCrate" to="." method="_on_detect_crate_body_exited"]

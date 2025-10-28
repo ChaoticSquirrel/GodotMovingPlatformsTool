@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://p7c8wtcqbm5x"]
+
+[ext_resource type="PackedScene" uid="uid://c1ho4s5k3su31" path="res://PlatformPresets/ActivatablesPresets/ActivatablePlatform/ActivatablePlatform.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://dam8gqgrtmdw5" path="res://GameObjects/Button/button_body.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://dyu7es1cyp81k" path="res://GameObjects/Crate/crate_body.tscn" id="3_tlwt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
+size = Vector2(1153, 243)
+
+[node name="World" type="Node2D"]
+
+[node name="activatable_platform" parent="." instance=ExtResource("1_f3sb7")]
+speed = 0.5
+unactivated_pos = Vector2(341, 319)
+activated_pos = Vector2(437, 319)
+connect_channel = Array[int]([1])
+sprite = "4LongPlatform"
+group = "Floor"
+
+[node name="ButtonBody" parent="." instance=ExtResource("2_fj7yv")]
+position = Vector2(261, 401)
+control_channel = Array[int]([1, 0])
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(576, 525.5)
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="CrateBody" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(375, 368)
+
+[node name="activatable_platform2" parent="." instance=ExtResource("1_f3sb7")]
+speed = 0.5
+unactivated_pos = Vector2(180, 318)
+activated_pos = Vector2(296, 318)
+connect_channel = Array[int]([0])
+sprite = "4LongPlatform"
+NumSignalsForActive = 2
+
+[node name="ButtonBody2" parent="." instance=ExtResource("2_fj7yv")]
+position = Vector2(143, 401)
+control_channel = Array[int]([0])
+
+[node name="CrateBody2" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(74, 265)
